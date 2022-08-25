@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.lsbtest">
+    package="com.example.lsbtest"
+    tools:ignore="ProtectedPermissions">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -9,12 +10,14 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
         android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
 
     <application
         android:allowBackup="true"
@@ -27,7 +30,7 @@
         android:theme="@style/Theme.LSBTest"
         tools:targetApi="31">
         <meta-data
-            android:name="com.baidu.lbsqpi.API_KEY"
+            android:name="com.baidu.lbsapi.API_KEY"
             android:value="apikey" />
 
         <activity
@@ -43,7 +46,7 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process="remote" />
+            android:process=":remote" />
     </application>
 
 </manifest>
